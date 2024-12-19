@@ -1,0 +1,15 @@
+<div class="user-card">
+    <h3>{{ user.name }}</h3>
+    <p><b>Username:</b> {{ user.username }}</p>
+    <p><b>Phone:</b> {{ user.phone }}</p>
+    <p><b>Email:</b> <i>{{ user.email }}</i></p>
+    <p><b>Website:</b> <a href="https://{{ user.website }}">{{ user.website }}</a></p>
+    <p><b>Address:</b> {{ user.address.suite }}, {{ user.address.street }}, {{ user.address.city }}</p>
+
+    <h4>Company Details:</h4>
+    <div class="company-details">
+        <p><b>Name:</b> {{ user.company.name }}</p>
+        <p><b>Catchphrase:</b> {{ user.company.catchPhrase }}</p>
+        <p><b>Business:</b> {{ user.company.bs }}</p>
+    </div>
+</div>
