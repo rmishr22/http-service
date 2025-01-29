@@ -7,4 +7,6 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
   constructor(private http: HttpClient) { }
+
+  
 }

@@ -4,5 +4,13 @@ ul{
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 80%;
-    margin: auto;
+    margin: 10px auto 50px;
+}
+header{
+    display: flex;
+    justify-content: space-around
+    ;
+    background-color: rgb(127, 255, 212);
+    position: sticky;
+    top: 0;
 }

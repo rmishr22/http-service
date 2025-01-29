@@ -1,10 +1,10 @@
 div{
-    border: 1px solid rgb(48, 50, 71);
+    border: 1px solid rgba(48, 50, 71, 0.233);
     padding: 10px 15px;
     margin: 10px auto;
     border-radius: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 

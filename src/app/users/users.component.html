@@ -1,8 +1,22 @@
-@if(users){
+<!-- <header>
+    <h2>User Details</h2>
+    <div></div>
+</header> -->
+<ag-grid-angular
+[rowData]="users"
+[columnDefs]="colDefs"
+style="height: 500px;"
+[defaultColDef]="defaultColDef"
+[theme]="theme"
+[paginationPageSize]="5"
+rowSelection="multiple"
+/>
+
+<!-- @if(users){
     <ul>
 
         @for(user of users; track user.id){
            <li> <app-user [user]="user"></app-user></li>
         }
     </ul>
-}
+} -->
