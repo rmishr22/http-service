@@ -36,6 +36,7 @@ export class UsersService {
         name: companyname
       }
     }
-    return this.http.post<{ message: string }>('http://localhost:3000/api/user', user)
+    console.log(user)
+    return this.http.post<{ message: string }>('http://localhost:3000/api/add-employee', user)
   }
 }

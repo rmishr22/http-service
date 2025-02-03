@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
+import { UsersService } from '../users.service';
 @Component({
   selector: 'app-user-form',
   standalone: true,
@@ -14,9 +15,9 @@ export class UserFormComponent {
 
   title = 'reactive-form';
   form!: FormGroup;
-
-  constructor(private fb: FormBuilder) {}
-
+ 
+  constructor(private usersService: UsersService, private fb: FormBuilder) {}
+  
   ngOnInit(): void {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.pattern('^[A-Za-z\\s]+$')]],
@@ -49,7 +50,7 @@ export class UserFormComponent {
         return this.fb.group({
           bs: ['', ...baseValidators],
           catchPhrase: ['', ...baseValidators],
-          name: ['', ...baseValidators]
+          companyname: ['', ...baseValidators]
         });
       default:
         return this.fb.group({});
@@ -64,7 +65,11 @@ export class UserFormComponent {
     }
 
     console.log("Form Submitted Successfully!");
-    console.log(this.form.value); 
+    // console.log(this.form.value); 
+     this.usersService.addUser(this.form.value.email, this.form.value.name, this.form.value.username, this.form.value.phone, this.form.value.website, this.form.value.address.suite,this.form.value.address.street, this.form.value.address.city, this.form.value.address.zipcode, this.form.value.geo.lat, this.form.value.geo.lng, this.form.value.company.bs, this.form.value.company.catchPhrase, this.form.value.company.companyname).subscribe({
+      
+     })
+
     this.onReset()
   }
 

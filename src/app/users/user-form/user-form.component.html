@@ -141,8 +141,8 @@
 
                 <div>
                     <label for="companyName">Company Name</label>
-                    <input id="companyName" formControlName="name" class="form-control" />
-                    <div><small *ngIf="form.get('company.name')?.invalid && form.get('company.name')?.touched"
+                    <input id="companyName" formControlName="companyname" class="form-control" />
+                    <div><small *ngIf="form.get('company.companyname')?.invalid && form.get('company.companyname')?.touched"
                             class="error">
                             Company Name is required.
                         </small></div>
