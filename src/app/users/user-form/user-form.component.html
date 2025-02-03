@@ -1,0 +1,162 @@
+<form class="margin-auto" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="container margin-auto">
+      <div class="margin-auto">
+        <h4>Personal</h4>
+        <div class="flex">
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" formControlName="name" class="form-control" />
+                <div><small *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="error">
+                        Name is required and must only contain letters.
+                    </small></div>
+            </div>
+
+            <!-- Username Input -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" formControlName="username" class="form-control" />
+                <div><small *ngIf="form.get('username')?.invalid && form.get('username')?.touched" class="error">
+                        Username is required and must only contain letters.
+                    </small></div>
+            </div>
+
+            <!-- Phone Input -->
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" formControlName="phone" class="form-control" />
+                <div><small *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched" class="error">
+                        Enter a valid phone number (10 digits).
+                    </small></div>
+            </div>
+
+            <!-- Website Input -->
+            <div class="form-group">
+                <label for="website">Website</label>
+                <input id="website" formControlName="website" class="form-control" />
+                <div><small *ngIf="form.get('website')?.invalid && form.get('website')?.touched" class="error">
+                        Website is required.
+                    </small></div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" formControlName="email" class="form-control" />
+                <div><small *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+                        Enter a valid email address.
+                    </small></div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Address FormArray -->
+
+        <div  class="margin-auto">
+            <h4>Address</h4>
+            <div formGroupName="address" class="flex">
+                <div>
+
+                    <label for="suite">Suite</label>
+                    <input id="suite" formControlName="suite" class="form-control" />
+                    <div><small *ngIf="form.get('address.suite')?.invalid && form.get('address.suite')?.touched"
+                            class="error">
+                            Suite is required.
+                        </small></div>
+                </div>
+                <div>
+
+                    <label for="street">Street</label>
+                    <input id="street" formControlName="street" class="form-control" />
+                    <div><small *ngIf="form.get('address.street')?.invalid && form.get('address.street')?.touched"
+                            class="error">
+                            Street is required.
+                        </small></div>
+                </div>
+                <div>
+
+                    <label for="city">City</label>
+                    <input id="city" formControlName="city" class="form-control" />
+                    <div><small *ngIf="form.get('address.city')?.invalid && form.get('address.city')?.touched"
+                            class="error">
+                            City is required and must only contain letters.
+                        </small></div>
+                </div>
+                <div>
+
+                    <label for="zipcode">Zipcode</label>
+                    <input id="zipcode" formControlName="zipcode" class="form-control" />
+                    <div><small *ngIf="form.get('address.zipcode')?.invalid && form.get('address.zipcode')?.touched"
+                            class="error">
+                            Enter a valid 5-digit zipcode.
+                        </small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geo Form Group -->
+        <div class="margin-auto">
+            <h4>Geo</h4>
+            <div formGroupName="geo" class="flex">
+                <div>
+
+                    <label for="lat">Latitude</label>
+                    <input id="lat" formControlName="lat" class="form-control" />
+                    <div><small *ngIf="form.get('geo.lat')?.invalid && form.get('geo.lat')?.touched" class="error">
+                            Latitude is required and must be a valid number.
+                        </small></div>
+                </div>
+                <div>
+
+                    <label for="lng">Longitude</label>
+                    <input id="lng" formControlName="lng" class="form-control" />
+                    <div><small *ngIf="form.get('geo.lng')?.invalid && form.get('geo.lng')?.touched" class="error">
+                            Longitude is required and must be a valid number.
+                        </small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Form Group -->
+        <div  class="margin-auto">
+            <h4>Company</h4>
+            <div formGroupName="company" class="flex">
+                <div>
+                    <label for="bs">BS</label>
+                    <input id="bs" formControlName="bs" class="form-control" />
+                    <div><small *ngIf="form.get('company.bs')?.invalid && form.get('company.bs')?.touched"
+                            class="error">
+                            BS is required.
+                        </small></div>
+                </div>
+                <div>
+                    <label for="catchPhrase">Catch Phrase</label>
+                    <input id="catchPhrase" formControlName="catchPhrase" class="form-control" />
+                    <div><small
+                            *ngIf="form.get('company.catchPhrase')?.invalid && form.get('company.catchPhrase')?.touched"
+                            class="error">
+                            Catch Phrase is required.
+                        </small></div>
+                </div>
+
+                <div>
+                    <label for="companyName">Company Name</label>
+                    <input id="companyName" formControlName="name" class="form-control" />
+                    <div><small *ngIf="form.get('company.name')?.invalid && form.get('company.name')?.touched"
+                            class="error">
+                            Company Name is required.
+                        </small></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Submit Button -->
+        <div class="btn-div margin-auto">
+            <button mat-flat-button extended type="submit" [disabled]="form.invalid"
+                class="btn btn-primary btn-success">Submit</button>
+            <button mat-stroked-button extended type="button" (click)="onReset()"
+                class="btn btn-secondary danger">Reset</button>
+        </div>
+    </form>

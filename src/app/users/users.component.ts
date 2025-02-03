@@ -11,7 +11,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [UserComponent, AgGridAngular],
+  imports: [ AgGridAngular],
   providers: [HttpClient],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
@@ -21,7 +21,7 @@ export class UsersComponent {
   users: User[]=[];
 
   ngOnInit(): void {
-    this.userService.getPosts().subscribe((data) => {
+    this.userService.getUsers().subscribe((data) => {
       this.users = data.users;  // Bind the fetched users to the component's users array
     });
   
